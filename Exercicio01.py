@@ -8,10 +8,9 @@ import math
 def calculaHipotenusa(ca, co):
     resultado = ((ca**2) + (co**2))
     hipotenusa = math.sqrt(resultado)
-    return hipotenusa
+    print(f"Hipotenusa = {hipotenusa}")
 
 
 ca = int(input("Digite o valor do primeiro cateto: "))
 co = int(input("Digite o valor do segundo cateto: "))
-
-print(f"Hipotenusa = {calculaHipotenusa(ca, co)}")
+calculaHipotenusa(ca, co)
