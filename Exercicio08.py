@@ -16,13 +16,15 @@ def criarArquivo(nomeArquivo):
 def escrever(arquivo, mensagem):
     arquivo = open(arquivo, "a")
     arquivo.write(mensagem)
+    arquivo.close()
 
 def exibeArquivo(nomeArquivo):
     arquivo = open(nomeArquivo, "r")
     print(arquivo.readlines())
+    arquivo.close()
 
 def menu():
-    print("MENU DE OPÇÕES:\n1. Criar ou abrir arquivo\n2. Escrever em um arquivo\n3. Exibir um arquivo")
+    print("MENU DE OPÇÕES:\n1. Criar ou abrir arquivo\n2. Escrever em um arquivo\n3. Exibir um arquivo\n0. Sair")
 
     opcao = int(input("Digite uma das opções acima: "))
 
@@ -45,6 +47,9 @@ def menu():
         nomeDoArquivo = input("Qual arquivo deseja exibir: ")
         exibeArquivo(nomeDoArquivo)
         menu()
+    
+    elif opcao == 0:
+        print("Saindo...")
     
     else:
         print("Opção escolhida inválida! Selecione outra: ")
